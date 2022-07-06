@@ -1,0 +1,77 @@
+{% extends 'templates.html' %}
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en-US">
+{% block content %}
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Natural Skin- Message</title>
+</head>
+	<style > 
+		h1 {
+		text-align: center;
+		}
+	body {
+  		background-color: #ffe6f2;
+
+		}
+	.side {
+		text-align: center;
+	}
+	#customerReview {
+	    margin-left: 30px;
+    	    background: #FFFF; 
+            color: #246E86; 
+            border:inset;; 
+            width: 35%; 
+            font-size: 15px; 
+            min-height: 250px; 
+            max-height: 250px;
+	}
+	.buttonhome{
+	background-color: #ffe4d7;
+      padding: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: 60px;
+}
+	</style>
+	<body>
+	<form method=POST>
+	<br><br><hr>		
+	<h1 style="color:#8c202c;">Contact Us</h1>
+	
+			
+				
+<div class="side" >
+	<label class="fn">Full Name:</label><br><br><input type="text" id="customerName" name="name" size="30" placeholder="Please enter your name here." required/>
+	<br><br>
+
+	<label class="em">E-mail:</label><br><br><input type="email" id="customerEmail" name="email" size="30" placeholder ="PLease enter your active e-mail here." required /> 
+
+	<br><br>
+
+	<br><br>
+	<label>Messages</label>
+	<br><br>
+	<textarea id="customerReview" placeholder="PLease enter your message here." name="review" rows="50" required></textarea>
+
+
+		{% csrf_token %}
+		<br><br>
+	<input id="btnOK" type="submit" value="OK"/>
+		<a class="buttonhome" href="home.html">Back</a> 
+	<br><br>
+	<table id="cusSummary">
+		{% for item in Contactlist %}
+		<tr>
+			<td>Summary: {{item.FullName}}, {{item.ActiveEmail}}, {{item.Messages}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</form>
+	</div>
+	</body> 
+</html>
+{% endblock %}

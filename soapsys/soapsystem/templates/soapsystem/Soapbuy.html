@@ -1,0 +1,114 @@
+{% extends 'templates.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block content %}
+<head>
+    <title>
+        Order
+    </title> 
+  <link rel="stylesheet" href="{%static 'css/allstyle.css'%}"> 
+</head>
+    <!-- <div class="links">
+         <img src="Image/Logo.webp"
+              alt="BeautySoaps"
+              class= image_format>
+
+         <ul>
+    
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutshop.html">About Shop</a></li>
+            <li><a href="soaps.html">Beauty Soap</a></li>
+            <li><a href="soapbuy.html">Buy Soap</a></li>
+            <li><a href="topay.html">Pay Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            </a></li>
+      </ul>
+    </div> -->
+
+<form>
+<div class="grid-container">
+<div class="item">
+        <div class="item1"><strong>BEAUTY SOAP</strong></div>
+            <br>
+            <br>
+            
+        <label name="soapprod1" class="soap1"for="soap">Charcoal-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱120.00</label>
+
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Glutathione-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱150.00</label>
+              <br>
+              <br>
+
+              <label name="soapprod1" class="soap1"for="soap">Kojic-----------</label>
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱100.00</label>
+     
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Oatmeal-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱125.00</label>
+          
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Glass Skin-----------</label>
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱170.00</label>
+
+              <br>
+              <br>
+            </div>
+
+        <div class="item">
+        <div class="item1"><strong>Order Now!</strong></div>
+            <br>
+            <br>
+        <label name="soapprod1" class="soap1"for="soap">Name of Soap:</label>
+            <input class="info1" type="text" name="name1" id="name1" placeholder="Soap name" required>
+        <br>
+
+        <label id="cod"  for="cod" class="info">Qty:</label>
+            <input class="info1" type="text" name="name1" id="name1" placeholder="How many soap your want to avail?" required>
+
+        <div>
+            <input name="reset" class="buttoncancel" type="reset" onclick="cancelOrder()" value="Cancel Order">
+
+
+            <input name="delete" class="buttondelete" type="delete" onclick="cancelOrder()" value="Delete Order">
+
+            <input name="update" class="buttonupdate" type="update" onclick="updateOrder()" value="Update Order">
+
+            <input id="btn"type="submit" name="btn" value="Submit"/>&nbsp;
+        </div>
+
+</form>
+
+        <table id="SoapBuy"/>
+    
+        <tr style="text-align: center;">
+            <th>soapname</th>
+            <th>qty</th>
+            
+        </tr>
+        {% for deliver in soapss %}
+        <tr style="text-align: center;">
+            <td>{{ forloop.counter}}: {{ deliver.soapname }}</td>
+            <td>{{ deliver.qty }}</td>
+ 
+
+        </tr>
+        {% endfor %}
+        </table>
+            
+
+</body>
+</html>
+{% endblock %}

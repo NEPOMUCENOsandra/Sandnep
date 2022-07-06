@@ -1,0 +1,164 @@
+{% extends 'templates.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block content %}
+
+<style>
+    body{
+    
+        width: 90%;
+        height: 100vh;
+        background-image: url(pictures/cover.jpg);
+        background-position: center;
+        background-size: cover;
+
+}
+* {
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+    .item {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 15px;
+      text-align: center;
+      list-style-position: 20px;
+
+      
+    }
+    .soapprod{
+        color: #fff;
+        font-size: 30px;
+        letter-spacing: 4px;
+        padding: 15px;
+        background-color: #000;
+        opacity: 40%;
+    }
+    .soapprod{
+    max-width: 1010px;
+    text-align: center;
+    display: center;
+    margin: 15px 10px;
+
+}
+    .soapqty1{
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin-bottom: 10px;
+
+}
+    .soaptype{
+    font-size: 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    
+}
+
+    .buttoncancel{
+    background-color: #ffe4d7;
+      padding: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: 60px;
+}
+    .total{
+        text-align: right;
+        display: right;
+    }
+
+    .checkout {
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #d66175;
+        border-radius: 6px;
+        outline: none;
+      }
+
+</style>
+
+
+<div class="container">
+  <div class="BuyerInfo">
+
+                <form method="POST" action="">
+                {% csrf_token %}
+              <div class="buyerinfo1"> Buyers Information </div>                                 
+                 <label id="name1"  for="name1" class="info">Last Name:</label>
+                 <input class="info1" type="text" name="lastname" id="name1" placeholder="type your last name here" required>
+                 <br>
+
+                 <label id="name1"  for="name1" class="info">First Name:</label>
+                 <input class="info1" type="text" name="firstname" id="name1" placeholder="type your first name here" required>
+                 <br>
+                 <label id="name1"  for="name1" class="info">Middle Name:</label>
+                 <input class="info1" type="text" name="middlename" id="name1" placeholder="type your middle name here" required>
+                 <br>
+                 <label name="contact" for="contact" class="info">Contact No:</label>
+                 <input class="info1" type="contact" name="contact" id="contact" pattern="[0-9]{11}" placeholder="ex.09123456789" required>
+                 <br>
+                 <label name="email" for="email" class="info">Email:</label>
+                 <input class="info1" type="email" name="email" id="email" placeholder="type you email here"required>
+                 <br>
+
+                
+              </div>
+                <br>
+                <div>
+                      <input name="reset" class="buttoncancel" type="reset" onclick="cancelOrder()" value="Cancel"> 
+                      <input id="btn"type="submit" name="btn" value="Submit"/>&nbsp;
+                      
+
+
+        <table id="Buyerinfor"/>
+    
+        <tr style="text-align: center;">
+            <th>lastname</th>
+            <th>firstname</th>
+            <th>middlename</th>
+            <th>contact</th>
+            <th>email</th>
+            
+        </tr>
+        {% for deliver in buyerss %}
+        <tr style="text-align: center;">
+            <td>{{ forloop.counter}}: {{ deliver.lastname }}</td>
+            <td>{{ deliver.firstname }}</td>
+            <td>{{ deliver.middlename }}</td>
+            <td>{{ deliver.contact }}</td>
+            <td>{{ deliver.email}}</td>
+ 
+
+        </tr>
+        {% endfor %}
+        </table>
+            
+                      
+              
+         </div>
+                
+            </form>
+         </div>
+
+
+ 
+
+</div>
+
+
+</html>
+{% endblock %}
+

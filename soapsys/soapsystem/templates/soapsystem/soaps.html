@@ -1,0 +1,176 @@
+{% extends 'templates.html' %}
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="utf-8">
+
+    <title>
+        Natural Skin
+    </title> 
+    <link rel="shortcut icon" type="image/png" href="{%static 'images/logo.png'%}">
+
+</head>
+<style>
+body{
+    
+        width: 90%;
+        height: 100vh;
+        background-image: url(pictures/cover.jpg);
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+
+}
+* {
+        margin: 0;
+        padding: 0;
+    }
+
+    .pictures {
+        width: 80px;
+        cursor: pointer;
+        align-self: left;
+    }
+    
+    .logo{
+        width: 150px;
+        cursor: pointer;
+        align-self: left;
+    }
+    .text{
+        width: 100%;
+        position: absolute;
+        top:  50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #ffe6f0;
+        font-family: arial;
+    }
+    
+    .logo{
+        width: 100px;
+        cursor: pointer;
+        align-self: left;
+    }
+    .text{
+        width: 100%;
+        position: absolute;
+        top:  50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #ffe6f0;
+        font-family: arial;
+    }
+    .titletext {
+        width: 95%;
+        position: absolute;
+        top:  20%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #ffe6f0;
+        font-family: arial;
+    }
+{
+  box-sizing: border-box;
+
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  display: inline-block;
+}
+#myUL li a {
+  margin-top: -1px; /* Prevent double borders */
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+   
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+h2{
+    text-align: center;
+    font-size: 60px;
+    color: #ffb3cc;
+
+}
+.container {
+        width: 375px;
+        height: 520;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        overflow-y: scroll;
+    }
+
+    
+</style>
+
+<h2>Beauty Soaps</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Product" title="Type in a name">
+
+<div class="grid-container">
+<section class="container">
+<ul id="myUL">
+  <li><a href="kojicbenefits.html">Kojic Soap</a></li>
+  <li><a href="glassbenefits.html">Glass Skin Soap</a></li>
+  <li><a href="glutabenefits.html">Glutathione Soap</a></li>
+  <li><a href="oatbenefits.html">Oatmeal Soap</a></li>
+  <li><a href="charbenefits.html">Charcoal Soap</a></li>
+  <li><a href="kojicbenefits.html">Whitening Soap</a></li>
+  <li><a href="glassbenefits.html">Berry Soap</a></li>
+  <li><a href="glutabenefits.html">Angel Soap</a></li>
+  <li><a href="oatbenefits.html">Smooth Soap</a></li>
+  <li><a href="charbenefits.html">Milk Soap</a></li>
+  
+  
+
+</ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</section>
+</body>
+</html>
+{% endblock %}
