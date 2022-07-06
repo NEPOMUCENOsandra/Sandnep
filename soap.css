@@ -1,0 +1,157 @@
+body {
+
+	 	width: 95%;
+		height: 90vh;
+		background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(pictures/cover3.jpg);
+		background-size: cover;
+		background-position: center;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'poppins', sans-serif;
+	}
+
+	.pictures {
+		width: 80px;
+		cursor: pointer;
+		align-self: left;
+	}
+	.link ul li a{
+		text-decoration: none;
+		color: #1a000a;
+		text-transform: uppercase;
+	}
+	
+	.link{
+		width: 100%;
+		margin: auto;
+		padding: 40px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.link ul li{
+		list-style: none;
+		display: inline-block;
+		margin: 0 25px;
+		position: relative;
+	}
+
+	.link ul li a{
+		text-decoration: none;
+		color: #ffcce0;
+		text-transform: uppercase;
+	}
+	.link ul li::after{
+		content:'';
+		height: 3px;
+		width: 0;
+		background: #b30047;
+		position: absolute;
+		left: 0;
+		bottom: -5px;
+		transition: 0.5s;
+	}
+	.link ul li:hover::after{
+		width: 100%;
+	}
+	.logo{
+		width: 150px;
+		cursor: pointer;
+		align-self: left;
+	}
+	.text{
+		width: 100%;
+		position: absolute;
+		top:  50%;
+		transform: translateY(-50%);
+		text-align: center;
+		color: #ffe6f0;
+		font-family: arial;
+	}
+	
+	.logo{
+		width: 100px;
+		cursor: pointer;
+		align-self: left;
+	}
+	.text{
+		width: 100%;
+		position: absolute;
+		top:  50%;
+		transform: translateY(-50%);
+		text-align: center;
+		color: #ffe6f0;
+		font-family: arial;
+	}
+	.titletext {
+		width: 95%;
+		position: absolute;
+		top:  20%;
+		transform: translateY(-50%);
+		text-align: center;
+		color: #ffe6f0;
+		font-family: arial;
+	}
+{
+  box-sizing: border-box;
+
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  display: inline-block;
+}
+#myUL li a {
+  margin-top: -1px; /* Prevent double borders */
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+   
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+h2{
+	text-align: center;
+	font-size: 60px;
+	color: #ffb3cc;
+
+}
+.container {
+		width: 375px;
+		height: 520;
+		background: #fff;
+		border-radius: 15px;
+		box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
+		padding: 20px;
+		overflow-y: scroll;
+	}
+
+	

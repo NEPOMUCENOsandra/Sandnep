@@ -1,0 +1,99 @@
+{% extends 'templates.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block content %}
+<head>
+  <link rel="stylesheet" href="allstyles.css"> 
+</head>
+<body>
+   <!-- <div class="links">
+         <img src="Image/Logo.webp"
+              alt="BeautySoaps"
+              class= image_format>
+
+         <ul>
+    
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutshop.html">About Shop</a></li>
+            <li><a href="soaps.html">Beauty Soap</a></li>
+            <li><a href="soapbuy.html">Buy Soap</a></li>
+            <li><a href="topay.html">Pay Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            </a></li>
+      </ul>
+    </div> -->
+
+
+        <div class="container">
+              <div class="BuyerInfo">
+                          <div class="buyerinfo1"> Cash on Delivery </div>
+                           <form>
+                            <label id="cod"  for="cod" class="info"><strong>Address</strong></label>
+                            <br>
+                           <label id="cod"  for="cod" class="info">Street:</label>
+                           <input class="info1" type="text" name="name1" id="name1" placeholder="type your street/unit/number here" required>
+                           <br>
+                           <label id="cod"  for="cod" class="info">Subdivision:</label>
+                           <input class="info1" type="text" name="name1" id="name1" placeholder="type your subdivision here" required>
+                           <br>
+                           <label id="cod"  for="cod" class="info">Barangay:</label>
+                           <input class="info1" type="text" name="name1" id="name1" placeholder="type your barangay here" required>
+                           <br>
+                           <label id="cod"  for="cod" class="info">City:</label>
+                           <input class="info1" type="text" name="name1" id="name1" placeholder="type your city here" required>
+                           <br>
+                           <label name="cod" for="cod" class="name1">Zip Code:</label>
+                           <input class="info1" type="name1" name="name1" id="name1" placeholder="####" required>
+                           <br>
+                           <label name="sffee">Shipping Fee:<td class="Price2" id="deliveryFee" value=50> <strong>₱ 40.00 </strong></td>
+                            <br>
+                            <br>
+                            <label name="sffee">Delivery Type:<td class="Price2" id="deliveryFee" value=50> <strong> Standard Delivery </strong></td>
+                           <br>
+                           <br>
+                            <input name="reset" class="buttoncancel" type="reset" onclick="cancelOrder()" value="Cancel">
+                              
+
+                            <input name="delete" class="buttondelete" type="reset" onclick="deleteOrder()" value="Delete">
+
+                            <input name="update" class="buttonupdate" type="update" onclick="updateOrder()" value="Update">
+
+                            <input id="btn"type="submit" name="btn" value="Submit"/>&nbsp;
+
+
+
+                    <table id="Topay"/>
+            
+                    <tr style="text-align: center;">
+                        <th>street</th>
+                        <th>subd</th>
+                        <th>brgy</th>
+                        <th>city</th>
+                        <th>zipcode</th>
+                                
+                    </tr>
+                    {% for deliver in payment %}
+                    <tr style="text-align: center;">
+                        <td>{{ forloop.counter}}: {{ deliver.street }}</td>
+                        <td>{{ deliver.subd }}</td>
+                        <td>{{ deliver.brgy }}</td>
+                        <td>{{ deliver.city }}</td>
+                        <td>{{ deliver.zipcode}}</td>
+                     
+
+                    </tr>
+                    {% endfor %}
+                    </table>
+            
+                        </div>
+                        </form>
+         </div>
+        </div>
+
+</body>
+</html>
+{% endblock %}
+
+

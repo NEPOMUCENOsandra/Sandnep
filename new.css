@@ -1,0 +1,97 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  width: 95%;
+  height: 90vh;
+  background-color: #cc0044;
+  background-position: center;
+}
+
+
+.links{
+    width: 100%;
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+  }
+
+  .links ul li a{
+    text-decoration: none;
+    color: #cc0044;
+    text-transform: uppercase;
+  }
+  .links ul li::after{
+    content:'';
+    height: 3px;
+    width: 0;
+    background: #b30047;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+  }
+  .links ul li:hover::after{
+    width: 100%;
+  }
+.BuyerInfo {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  list-style-position: 20px;
+  width: 50%;
+  margin: auto;
+  
+}
+.buyerinfo1{
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 4px;
+    padding: 10px;
+    background-color: #000;
+    opacity: 40%;
+    text-align: center;
+}
+.info1{
+   
+    width: 50%;
+    font-size: 15px;
+    border: 1px solid #aaaaaa;
+    border-spacing: 10px;
+    margin-bottom: 30px;
+    margin: 10px 10px;
+    text-align: left;
+    display: inline-block;
+
+  }
+
+
+  .topay {
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #d66175;
+        border-radius: 6px;
+        outline: none;
+        align-items: center;
+      }
+
+  .buttoncancel{
+  background-color: #ffe4d7;
+      padding: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: 60px;
+}
+
+
